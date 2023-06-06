@@ -21,23 +21,25 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-<script src="{{ asset('ckeditor5/ckeditor.js') }}"></script>
+{{-- <script src="{{ asset('ckeditor5/ckeditor.js') }}"></script> --}}
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 <script src="{{asset('code_block/src/codeblock.ts')}}"></script>
 <script>
-    ClassicEditor.create(document.querySelector("#post_editor"), {
-    ckfinder: {
-        uploadUrl: '{{ route("ckeditor.upload")."?_token=".csrf_token()}}',
-    },
-    codeBlock: {
-            languages: [
-                { language: 'css', label: 'CSS' },
-                { language: 'html', label: 'HTML' }
-            ]
-        },
+    CKEDITOR.replace('post_editor');
+    // ClassicEditor.create(document.querySelector("#post_editor"), {
+    // ckfinder: {
+    //     uploadUrl: '{{ route("ckeditor.upload")."?_token=".csrf_token()}}',
+    // },
+    // codeBlock: {
+    //         languages: [
+    //             { language: 'css', label: 'CSS' },
+    //             { language: 'html', label: 'HTML' }
+    //         ]
+    //     },
     
-    }).catch((error) => {
-        console.error(error);
-    });
+    // }).catch((error) => {
+    //     console.error(error);
+    // });
 </script>
 <script src="/main.js"></script>
 </body>
