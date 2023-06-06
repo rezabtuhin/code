@@ -32,3 +32,6 @@ Route::get('/dictionary', [DictionaryController::class, 'getPage']);
 Route::post('/user_dictionary', [DictionaryController::class, 'insert']);
 
 Route::get('/dictionary/view/{item}', [DictionaryController::class, 'view_item']);
+Route::delete('/dictionary/delete/{item}', [DictionaryController::class, 'delete']);
+Route::get('/dictionary/edit/{item}', [DictionaryController::class, 'edit']);
+Route::put('/dictionary/edit/{item}', [DictionaryController::class, 'update']);

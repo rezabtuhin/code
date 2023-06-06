@@ -2,6 +2,27 @@
 @section('content')
 @extends('components.navbar')
 <div class="container mt-2">
+    @if($message = \Illuminate\Support\Facades\Session::get('success'))
+                <script type="text/javascript">
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: '{{$message}}'
+                    })
+                </script>
+
+            @endif
     <div class="row">
         <div class="col-md-9">
             @if(isset($error))
@@ -16,12 +37,29 @@
                                 <h6 style="font-weight: 800">{{$dict['title']}}</h6>
                             </div>
                             <div class="d-flex">
-                                <form action="" method="post">
-                                    <button class="btn btn-success btn-sm me-2"><i class="bi bi-pencil-square"></i></button>
-                                </form>
-                                <form action="" method="post">
-                                    <button class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></button>
-                                </form>
+                                <a href="/dictionary/edit/{{$dict->id}}" class="btn btn-success btn-sm me-2"><i class="bi bi-pencil-square"></i></a>
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-trash3"></i></button>
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <strong class="modal-title" id="staticBackdropLabel">Are you sure you want to delete this item?</strong>
+                                          <button type="button" class="btn btn-outline-dark btn-sm" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x"></i></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <p class="forgot">Deleting item can not be retrieved again. Once you delete the item it's permanent.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary btn-sm forgot" data-bs-dismiss="modal">Close</button>
+                                          <form action="/dictionary/delete/{{$dict->id}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger btn-sm forgot">Yes, Delete</button>
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                             </div>
                         </div>
                     </div>

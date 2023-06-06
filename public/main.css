@@ -92,3 +92,8 @@ a:hover{
 }
 
 /* Homepage desgn ends */
+
+/* dictionary view starts */
+.modal-content{
+    border-radius: 0;
+}

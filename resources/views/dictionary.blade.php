@@ -7,6 +7,47 @@
             <div class="row">
                 <h1 style="font-weight: 900">Dictionary</h1>
             </div>
+            @if($message = \Illuminate\Support\Facades\Session::get('success'))
+                <script type="text/javascript">
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: '{{$message}}'
+                    })
+                </script>
+            
+            @endif
+            @if ($message = \Illuminate\Support\Facades\Session::get('success'))
+            <script type="text/javascript">
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+
+                Toast.fire({
+                    icon: 'failed',
+                    title: '{{$message}}'
+                })
+            </script>
+            @endif
             <div class="card">
                 <strong class="card-header forgot">Create New</strong>
                 <div class="card-body">
