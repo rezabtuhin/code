@@ -14,6 +14,11 @@
                     </a>
                 </li>
                 <li class="">
+                    <a class="dropdown-item" href="/contribution">
+                        <span><i class="bi bi-pencil me-2"></i> Contribution</span>
+                    </a>
+                </li>
+                <li class="">
                     <form action="/logout" method="POST" class="dropdown-item">
                         @csrf
                         <button class="logout w-100"><i class="bi bi-box-arrow-left me-2"></i> Logout</button>

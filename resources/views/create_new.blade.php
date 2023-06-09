@@ -36,12 +36,12 @@
                             <div class="row mt-2">
                                 <div class="col-md-4">
                                     <div class="input-group input-group-sm my-2">
-                                        <input name="memory_limit" type="text" placeholder="memory limit" class="form-control input " required>
+                                        <input name="memory_limit" type="number" placeholder="memory limit" class="form-control input " required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="input-group input-group-sm my-2">
-                                        <input name="time_limit" type="text" placeholder="time limit" class="form-control input " required>
+                                        <input name="time_limit" type="number" placeholder="time limit" class="form-control input " required>
                                     </div>
                                 </div>
                                 <div class="col-md-4">

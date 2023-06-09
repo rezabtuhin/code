@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\DictionaryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -39,3 +40,8 @@ Route::put('/dictionary/edit/{item}', [DictionaryController::class, 'update']);
 
 Route::get('/create-problems', [ProblemController::class, 'getPage']);
 Route::post('/create-problems', [ProblemController::class, 'createNew']);
+
+
+Route::get('/contribution', [ContributionController::class, 'getPage']);
+Route::put('/contribution/publish/{item}', [ContributionController::class, 'publish']);
+Route::put('/contribution/hide/{item}', [ContributionController::class, 'hide']);

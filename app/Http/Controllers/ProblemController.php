@@ -34,7 +34,8 @@ class ProblemController extends Controller
         $testCases = json_decode(file_get_contents($request->file('test_cases')->getPathname()), true);
         $validatedData['user_id'] = auth()->id();
         $validatedData['test_cases'] = $testCases;
+        $validatedData['publish'] = 0;
         Problem::create($validatedData);
-        return redirect('/')->with('title', 'Home | Codersher | Login');
+        return redirect('/contribution')->with('title', 'Home | Codersher | Login');
     }
 }

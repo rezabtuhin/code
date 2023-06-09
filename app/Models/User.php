@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Post;
+use App\Models\Problem;
 use App\Models\Dictionary;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -54,5 +55,10 @@ class User extends Authenticatable
     public function usersCoolDict()
     {
         return $this->hasMany(Dictionary::class, 'user_id');
+    }
+
+    public function userCoolProblems()
+    {
+        return $this->hasMany(Problem::class, 'user_id');
     }
 }
