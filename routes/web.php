@@ -38,3 +38,4 @@ Route::get('/dictionary/edit/{item}', [DictionaryController::class, 'edit']);
 Route::put('/dictionary/edit/{item}', [DictionaryController::class, 'update']);
 
 Route::get('/create-problems', [ProblemController::class, 'getPage']);
+Route::post('/create-problems', [ProblemController::class, 'createNew']);

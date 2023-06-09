@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('problems', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->string('title');
+            $table->string('difficulty');
+            $table->longText('description');
+            $table->integer('memory_limit');
+            $table->integer('time_limit');
+            $table->string('tags');
+            $table->string('sample_test_count');
+            $table->json('test_cases');
             $table->timestamps();
         });
     }
