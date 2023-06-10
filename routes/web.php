@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContributionController;
+use App\Http\Controllers\ContributionEditController;
 use App\Http\Controllers\DictionaryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -48,3 +49,5 @@ Route::put('/contribution/publish/{item}', [ContributionController::class, 'publ
 Route::put('/contribution/hide/{item}', [ContributionController::class, 'hide']);
 
 Route::get('/contribution/userview/{item}', [UserviewController::class, 'getPage']);
+Route::delete('/contribution/delete/{item}', [UserviewController::class, 'delete']);
+Route::get('/contribution/edit/{item}', [ContributionEditController::class, 'getPage']);

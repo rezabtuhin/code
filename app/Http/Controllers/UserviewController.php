@@ -14,4 +14,13 @@ class UserviewController extends Controller
         }
         return view('contributionUserView', ['item' => $item])->with('title', $item['title'] . ' | Restricted View');
     }
+
+    public function delete(Problem $item)
+    {
+        if (auth()->user()->id === $item['user_id']) {
+            $item->delete();
+            return redirect('/contribution')->with('success', 'Item deleted successfully!')->with('title', auth()->user()['username'] . ' | Contribution');
+        }
+        return redirect('/contribution')->with('error', 'You are not authorized')->with('title', auth()->user()['username'] . ' | Contribution');
+    }
 }

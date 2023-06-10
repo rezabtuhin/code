@@ -7,6 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/lib/codemirror.css">
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/lib/codemirror.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/mode/javascript/javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/addon/edit/matchbrackets.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/addon/hint/show-hint.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/addon/hint/javascript-hint.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/theme/dracula.css">
+
     <link rel="stylesheet" href="/main.css">
     <title>
         @isset($title)
