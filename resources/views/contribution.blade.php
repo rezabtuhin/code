@@ -82,11 +82,9 @@
                                 <form action="{{$item->publish == 0 ? "contribution/publish/".$item->id : "contribution/hide/".$item->id}}" method="post">
                                     @csrf
                                     @method('PUT')
-                                    @if ($item->publish == 0)
-                                        <button class="btn btn-success btn-sm">Publish</button>
-                                    @else
-                                        <button class="btn btn-danger btn-sm">Hide</button>
-                                    @endif
+                                    <button class="btn {{$item->publish == 0 ? "btn-success" : "btn-danger"}} btn-sm">
+                                        {{$item->publish == 0 ? "Publish" : "Hide"}}
+                                    </button>
                                 </form>
                             </td>
                         </tr>

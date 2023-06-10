@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProblemController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,3 +46,5 @@ Route::post('/create-problems', [ProblemController::class, 'createNew']);
 Route::get('/contribution', [ContributionController::class, 'getPage']);
 Route::put('/contribution/publish/{item}', [ContributionController::class, 'publish']);
 Route::put('/contribution/hide/{item}', [ContributionController::class, 'hide']);
+
+Route::get('/contribution/userview/{item}', [UserviewController::class, 'getPage']);
