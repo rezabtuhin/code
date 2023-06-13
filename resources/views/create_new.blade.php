@@ -61,7 +61,7 @@
                             </div>
                             <div class="row">
                                 <div class="mb-3">
-                                    <label for="formFileSm" class="form-label forgot">Test Cases</label>
+                                    <label for="formFileSm" class="form-label forgot">Test Cases (json array structured)</label>
                                     <input class="form-control form-control-sm input" name="test_cases" accept=".json, .txt" id="formFileSm" type="file" required >
                                 </div>
                             </div>
