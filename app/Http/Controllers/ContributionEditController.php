@@ -30,14 +30,11 @@ class ContributionEditController extends Controller
             'sample_test_count' => 'required',
             'test_cases' => 'required',
         ]);
-        $input = stripslashes($request->test_cases);
-        $input = stripslashes($input);
-        $input = trim($input, '"');
-        $input = str_replace('\\r\\n', "\r\n", $input);
-        $input = str_replace('\\t', "\t", $input);
-        $data = json_decode($input, true);
-        $formattedJson = json_encode($data, JSON_PRETTY_PRINT);
-        $validatedData['test_cases'] = $formattedJson;
+        $file = $file = 'temp.txt';
+        file_put_contents($file, json_encode(json_decode($request->test_cases, true), true));
+        $fileData = file_get_contents($file);
+        $validatedData['test_cases'] = json_decode($fileData, true);
+        unlink($file);
         $item->update($validatedData);
         return redirect('/contribution/userview/' . $item['id'])->with('success', 'Item edited successfully!');
 

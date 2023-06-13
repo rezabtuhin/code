@@ -60,7 +60,6 @@
                     lineNumbers: true,
                     matchBrackets: true,
                     extraKeys: { "Ctrl-Space": "autocomplete" },
-                    readOnly: true 
                 });
                 editor.setSize(null, "200px");
 </script>

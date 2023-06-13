@@ -69,14 +69,7 @@
                             $jsonData = $dict->test_cases;
                             $formattedJson = json_encode($jsonData, JSON_PRETTY_PRINT);
                         @endphp
-                        <textarea name="test_cases" id="json-editor" style="'JetBrains Mono', sans-serif;" disabled>{{ $formattedJson }}</textarea>
-
-                        <div class="row">
-                            <div class="mb-3">
-                                <label for="formFileSm" class="form-label forgot">Test Cases</label>
-                                <input class="form-control form-control-sm input" name="test_cases" accept=".json, .txt" id="formFileSm" type="file" required >
-                            </div>
-                        </div>
+                        <textarea name="test_cases" id="json-editor" style="'JetBrains Mono', sans-serif;">{{ $formattedJson }}</textarea>
                         <button class="btn btn-primary btn-sm w-100 btn-log-reg mt-3">Save</button>
                     </div>
                 </div>
