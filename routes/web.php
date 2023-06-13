@@ -5,6 +5,7 @@ use App\Http\Controllers\ContributionEditController;
 use App\Http\Controllers\DictionaryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProblemController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserviewController;
@@ -52,3 +53,5 @@ Route::get('/contribution/userview/{item}', [UserviewController::class, 'getPage
 Route::delete('/contribution/delete/{item}', [UserviewController::class, 'delete']);
 Route::get('/contribution/edit/{item}', [ContributionEditController::class, 'getPage']);
 Route::put('/contribution/edit/{item}', [ContributionEditController::class, 'update']);
+
+Route::get('/practice', [PracticeController::class, 'getPage']);

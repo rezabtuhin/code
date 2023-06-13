@@ -76,7 +76,19 @@
                                     @endforeach
                                 </strong>
                             </td>
-                            <td class="text-center"><span class="{{$item->difficulty}}">{{$item->difficulty}}</span></td>
+                            @php
+                                $diff = "";
+                                if ($item->difficulty == 1) {
+                                    $diff = "Easy";
+                                }
+                                if ($item->difficulty == 2) {
+                                    $diff = "Medium";
+                                }
+                                if ($item->difficulty == 3) {
+                                    $diff = "Hard";
+                                }
+                            @endphp
+                            <td class="text-center"><span class="_{{$item->difficulty}}">{{$diff}}</span></td>
                             <td>{{date('F j, Y', strtotime($item->created_at))}}</td>
                             <td class="text-center">
                                 <form action="{{$item->publish == 0 ? "contribution/publish/".$item->id : "contribution/hide/".$item->id}}" method="post">

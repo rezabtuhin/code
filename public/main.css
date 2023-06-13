@@ -112,7 +112,7 @@ a:hover{
     font-weight: lighter;
     font-style: italic;
 }
-.Easy{
+._1{
     background-color: rgb(90, 226, 119);
     padding: 3px;
     padding-left: 6px;
@@ -122,7 +122,7 @@ a:hover{
     border-radius: 50px;
 }
 
-.Medium{
+._2{
     background-color: rgb(220, 163, 29);
     padding: 3px;
     padding-left: 6px;
@@ -132,12 +132,12 @@ a:hover{
     border-radius: 50px;
 }
 
-.Hard{
+._3{
     background-color: rgb(254, 0, 0);
     padding: 3px;
     padding-left: 6px;
     padding-right: 6px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     /* text-transform: uppercase; */
     border-radius: 50px;
 }

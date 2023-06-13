@@ -27,9 +27,17 @@
                             <div class="col-md-6">
                                 <div class="input-group input-group-sm my-2">
                                     <select class="form-select input" name="difficulty" aria-label="Default select example" required>
-                                        @foreach(['Easy', 'Medium', 'Hard'] as $value)
+                                        @foreach([1, 2, 3] as $value)
                                             <option value="{{ $value }}" {{ $value == $dict->difficulty ? 'selected' : '' }}>
-                                                {{ $value }}
+                                                @if($value === 1)
+                                                    Easy
+                                                @elseif($value === 2)
+                                                    Medium
+                                                @elseif($value === 3)
+                                                    Hard
+                                                @else
+                                                    Unknown
+                                                @endif
                                             </option>
                                         @endforeach
                                     </select>

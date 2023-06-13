@@ -5,10 +5,11 @@ namespace App\Models;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Kyslik\ColumnSortable\Sortable;
 
 class Problem extends Model
 {
-    use HasFactory;
+    use HasFactory, Sortable;
     protected $fillable = [
         'user_id',
         'title',
@@ -25,6 +26,8 @@ class Problem extends Model
     protected $casts = [
         'test_cases' => 'json',
     ];
+
+    public $sortable = ['difficulty'];
 
     public function user()
     {

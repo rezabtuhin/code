@@ -15,7 +15,7 @@
                     
                 </div>
                 <div class="col-md-4 py-1 navigation-card">
-                    <a href="">
+                    <a href="/practice">
                         <div class="card text-bg-info p-2">
                             <i class="bi bi-book"></i>
                             <strong>Practice problem</strong>
