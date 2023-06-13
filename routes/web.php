@@ -51,3 +51,4 @@ Route::put('/contribution/hide/{item}', [ContributionController::class, 'hide'])
 Route::get('/contribution/userview/{item}', [UserviewController::class, 'getPage']);
 Route::delete('/contribution/delete/{item}', [UserviewController::class, 'delete']);
 Route::get('/contribution/edit/{item}', [ContributionEditController::class, 'getPage']);
+Route::put('/contribution/edit/{item}', [ContributionEditController::class, 'update']);

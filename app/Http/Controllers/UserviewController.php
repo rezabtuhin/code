@@ -12,6 +12,11 @@ class UserviewController extends Controller
         if (auth()->user()->id !== $item['user_id']) {
             return view('contributionUserView')->with('error', 'You are not authorized!');
         }
+        $s_test = [];
+        for ($i = 0; $i < $item->sample_test_count; $i++) {
+            array_push($s_test, $item->test_cases[$i]);
+        }
+        $item->test_cases = $s_test;
         return view('contributionUserView', ['item' => $item])->with('title', $item['title'] . ' | Restricted View');
     }
 

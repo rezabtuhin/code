@@ -11,6 +11,27 @@
             @else
                 <div class="card">
                     <div class="card-header">
+            @if($message = \Illuminate\Support\Facades\Session::get('success'))
+                <script type="text/javascript">
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: '{{$message}}'
+                    })
+                </script>
+            
+            @endif
                         <div class="d-flex justify-content-end">
                             <div class="d-flex">
                                 <a href="/contribution/edit/{{$item->id}}" class="btn btn-success btn-sm me-2"><i class="bi bi-pencil-square"></i></a>

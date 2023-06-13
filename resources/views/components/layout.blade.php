@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/addon/edit/matchbrackets.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/addon/hint/show-hint.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/addon/hint/javascript-hint.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/addon/edit/closebrackets.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.62.2/theme/dracula.css">
 
     <link rel="stylesheet" href="/main.css">
@@ -50,6 +51,18 @@
     }).catch((error) => {
         console.error(error);
     });
+
+
+    var editor = CodeMirror.fromTextArea(document.getElementById("json-editor"), {
+                    indentUnit: 4,
+                    autoCloseBrackets: true,
+                    mode: "application/json",
+                    lineNumbers: true,
+                    matchBrackets: true,
+                    extraKeys: { "Ctrl-Space": "autocomplete" },
+                    readOnly: true 
+                });
+                editor.setSize(null, "200px");
 </script>
 <script src="/main.js"></script>
 </body>
