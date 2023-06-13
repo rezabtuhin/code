@@ -13,7 +13,6 @@ class PracticeController extends Controller
     {
         if (Auth::check()) {
             $problems = Problem::sortable()->where('publish', 1)->where('user_id', '!=', auth()->id())->latest()->paginate(20);
-            // $problems = DB::table('problems')->where('publish', 1)->latest()->paginate(20);
             return view('practicelist', ['lists' => $problems])->with('title', 'Practice list | Codersher');
         }
         return redirect('/login')->withErrors([
