@@ -6,6 +6,7 @@ use App\Http\Controllers\DictionaryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PracticeController;
+use App\Http\Controllers\PracticeViewController;
 use App\Http\Controllers\ProblemController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserviewController;
@@ -55,3 +56,6 @@ Route::get('/contribution/edit/{item}', [ContributionEditController::class, 'get
 Route::put('/contribution/edit/{item}', [ContributionEditController::class, 'update']);
 
 Route::get('/practice', [PracticeController::class, 'getPage']);
+
+
+Route::get('/practice/{uuid}', [PracticeViewController::class, 'getPage']);

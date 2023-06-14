@@ -7,6 +7,35 @@
             <div class="row">
                 <h1 style="font-weight: 900">Problems</h1>
             </div>
+            @if($message = \Illuminate\Support\Facades\Session::get('error'))
+                <script type="text/javascript">
+                    // const Toast = Swal.mixin({
+                    //     toast: true,
+                    //     position: 'top-end',
+                    //     showConfirmButton: false,
+                    //     timer: 3000,
+                    //     timerProgressBar: true,
+                    //     didOpen: (toast) => {
+                    //         toast.addEventListener('mouseenter', Swal.stopTimer)
+                    //         toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    //     }
+                    // })
+
+                    // Toast.fire({
+                    //     icon: 'error',
+                    //     title: '{{$message}}'
+                    // })
+                    Swal.fire({
+                        title: 'Sweet!',
+                        text: '{{$message}}',
+                        imageUrl: 'https://media.giphy.com/media/mq5y2jHRCAqMo/giphy.gif',
+                        imageWidth: 200,
+                        imageHeight: 200,
+                        imageAlt: 'Not found',
+                    })
+                </script>
+            
+            @endif
             <table class="table forgot">
                 <thead>
                     <tr>
