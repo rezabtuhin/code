@@ -22,7 +22,7 @@
                     @foreach ($lists as $item)
                     <tr>
                         <td>{{$i}}</td>
-                        <td><strong><a href="">{{$item->title}}</a></strong></td>
+                        <td><strong><a href="/practice/{{$item->uuid}}">{{$item->title}}</a></strong></td>
                         @if ($item->difficulty == 1)
                             <td><span class="_{{$item->difficulty}}">Easy</span></td>
                         @elseif($item->difficulty == 2)

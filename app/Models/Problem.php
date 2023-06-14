@@ -12,6 +12,7 @@ class Problem extends Model
     use HasFactory, Sortable;
     protected $fillable = [
         'user_id',
+        'uuid',
         'title',
         'difficulty',
         'description',

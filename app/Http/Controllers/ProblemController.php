@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Problem;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,8 +32,23 @@ class ProblemController extends Controller
             'test_cases' => 'required|file',
         ]);
 
+        $unique = false;
+        $uuid = '';
+
+        while (!$unique) {
+            $newUuid = Str::uuid()->toString();
+            $existingUuid = Problem::where('uuid', $newUuid)->first();
+
+            if (!$existingUuid) {
+                $uuid = $newUuid;
+                $unique = true;
+            }
+        }
+
+
         $testCases = json_decode(file_get_contents($request->file('test_cases')->getPathname()), true);
         $validatedData['user_id'] = auth()->id();
+        $validatedData['uuid'] = $uuid;
         $validatedData['test_cases'] = $testCases;
         $validatedData['publish'] = 0;
         Problem::create($validatedData);

@@ -4,8 +4,11 @@
 <div class="container mt-2">
     <div class="row">
         <div class="col-md-9">
-            <div class="row">
-                <h1 style="font-weight: 900">My Contributions</h1>
+            <div class="row ">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h1 style="font-weight: 900">My Contributions</h1>
+                    <a href="/create-problems" class="btn btn-outline-dark btn-sm forgot"><i class="fa-solid fa-plus me-2"></i><strong>Create new</strong></a>
+                </div>
             </div>
             @if($message = \Illuminate\Support\Facades\Session::get('success'))
                 <script type="text/javascript">
